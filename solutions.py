@@ -43,8 +43,19 @@ def largestPrimeFactor(number):
     return primeFactorList[len(primeFactorList) - 1]
 
 #Problem 4: Find the largest palindrome made from the product of two 3-digit numbers.
+def productOf3DigitNums():
+    maxProd = 0
+    for i in range(100, 1000):
+        for j in range(100, 1000):
+            prod = i * j
+            if str(prod) == str(prod)[::-1]:
+                if prod > maxProd:
+                    maxProd = prod   
+    return maxProd
 
 #Problem 5: What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
+def smallestPositiveNum(n):
+    return math.lcm(*range(1, n + 1))
 
 #Problem 6: Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
 def diffBetweenSquares(n):
@@ -58,3 +69,7 @@ def diffBetweenSquares(n):
     squareOfTotal = squareOfTotal ** 2
 
     return squareOfTotal - sumOfSquares
+
+
+#Problem 7: What is the 10001st prime number?
+    
